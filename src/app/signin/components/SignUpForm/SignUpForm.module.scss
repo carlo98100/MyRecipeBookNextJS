@@ -1,0 +1,50 @@
+@import "../../../colors.scss";
+
+.signUpContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 36px;
+
+	.inputFieldWrapper {
+		.inputLabel {
+			color: $white;
+			text-transform: uppercase;
+			font-weight: 300;
+			font-size: 16px;
+		}
+		.inputField {
+			color: $white;
+			background-color: transparent;
+			border: none;
+			padding: 8px 0px;
+			border-bottom: 2px solid $accent;
+			width: 100%;
+			&:focus-visible {
+				outline: none;
+			}
+		}
+	}
+
+	.optionsContainer {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 20px;
+
+		.signUpButton {
+			width: fit-content;
+			padding: 8px 32px;
+			border-radius: 24px;
+			border: none;
+			background-color: $primary;
+			color: $white;
+			box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+		}
+
+		.alreadyMemberLink {
+			color: $slateBlue;
+			border-bottom: 1px solid $primary;
+			padding-bottom: 4px;
+		}
+	}
+}
