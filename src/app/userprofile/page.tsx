@@ -13,6 +13,8 @@ import LikedMealsList from "../components/LikedMealsList/LikedMealsList";
 import Link from "next/link";
 import ProfileImage from "../assets/default-user-img.png";
 import Image from "next/image";
+import isAuth from "../isAuth";
+
 function page() {
 	const { signedInUser } = useContext(UserContext);
 	return (
@@ -58,7 +60,7 @@ function page() {
 			<ContentWrapper>
 				<div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
 					<div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", fontSize: 12 }}>
-						<h3 style={{ textTransform: "uppercase" }}>Liked meals</h3>{" "}
+						<h3 style={{ textTransform: "uppercase" }}>Liked meals</h3>
 						{signedInUser.products.length > 0 ? (
 							<a style={{ display: "flex", flexDirection: "row", alignItems: "center", color: "#569bec" }}>
 								<span style={{ fontWeight: "bold" }}>View all</span>
@@ -71,7 +73,7 @@ function page() {
 					) : (
 						<div className={styles.emptyRecipesContainer}>
 							<p className={styles.emptyMessage}>Looks like you haven't liked any recipes.</p>
-							<Link className={styles.findRecipesBtn} href="/categories">
+							<Link className={styles.findRecipesBtn} href={{ pathname: "/categories" }}>
 								Find recipes
 							</Link>
 						</div>
@@ -82,4 +84,4 @@ function page() {
 	);
 }
 
-export default page;
+export default isAuth(page);

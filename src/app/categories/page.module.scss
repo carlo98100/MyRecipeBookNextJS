@@ -1,0 +1,16 @@
+@import "../colors.scss";
+
+.contentWrapperContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+	.pageTitle {
+		border-bottom: 2px solid green;
+		padding-bottom: 4px;
+	}
+	.categoriesContainer {
+		display: grid;
+		grid-template-columns: 1fr;
+		row-gap: 24px;
+	}
+}

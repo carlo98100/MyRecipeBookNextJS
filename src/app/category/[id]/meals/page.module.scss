@@ -1,0 +1,16 @@
+@import "../colors.scss";
+
+.contentWrapperContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+	.title {
+		border-bottom: 2px solid green;
+		padding-bottom: 4px;
+	}
+	.recipesContainer {
+		display: grid;
+		grid-template-columns: 1fr;
+		row-gap: 24px;
+	}
+}

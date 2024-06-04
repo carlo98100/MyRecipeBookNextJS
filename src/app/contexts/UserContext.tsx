@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode, createContext, useState } from "react";
+import React, { ReactNode, createContext, useState, useContext } from "react";
 
 const UserContext = createContext<any>(null);
 
@@ -30,15 +30,9 @@ function UserContextProvider(props: UserContextProviderProps) {
 		},
 	]);
 
-	const [signedInUser, setSignedInUser] = useState<User | null>({
-		firstname: "Test",
-		lastname: "Testsson",
-		email: "test@test.se",
-		password: "testtest",
-		products: [],
-	});
+	const [signedInUser, setSignedInUser] = useState<User | null>(null);
+	const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
-	// Method to add a product to the array
 	const addProduct = (product: Product) => {
 		setSignedInUser((prevUser) => ({
 			...prevUser!,
@@ -47,7 +41,6 @@ function UserContextProvider(props: UserContextProviderProps) {
 		console.log("Added product:", product);
 	};
 
-	// Method to remove a product by its ID
 	const removeProductById = (productId: string) => {
 		console.log("Deleting product with ID:", productId);
 		setSignedInUser((prevUser) => ({
@@ -61,6 +54,7 @@ function UserContextProvider(props: UserContextProviderProps) {
 
 		if (user) {
 			setSignedInUser(user);
+			setIsAuthenticated(true);
 			console.log("Signed in as:", user);
 			return true;
 		} else {
@@ -71,6 +65,7 @@ function UserContextProvider(props: UserContextProviderProps) {
 
 	const signOutUser = () => {
 		setSignedInUser(null);
+		setIsAuthenticated(false);
 	};
 
 	const AddnewUser = (newUser: User) => {
@@ -78,7 +73,7 @@ function UserContextProvider(props: UserContextProviderProps) {
 	};
 
 	return (
-		<UserContext.Provider value={{ signedInUser, addProduct, removeProductById, AddnewUser, signInUser, signOutUser }}>
+		<UserContext.Provider value={{ signedInUser, isAuthenticated, addProduct, removeProductById, AddnewUser, signInUser, signOutUser }}>
 			{props.children}
 		</UserContext.Provider>
 	);
