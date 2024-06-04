@@ -1,0 +1,28 @@
+.likedMealsContainer {
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap: 24px;
+
+	.mealContainer {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 12px;
+		grid-template-rows: 100px;
+
+		.image {
+			max-height: 100%;
+		}
+		.contentContainer {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+
+			.title {
+			}
+			.description {
+				max-height: 100%;
+				overflow: hidden;
+			}
+		}
+	}
+}

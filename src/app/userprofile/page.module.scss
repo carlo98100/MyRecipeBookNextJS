@@ -1,0 +1,86 @@
+@import "../colors.scss";
+
+$userMockImage: url("../assets/userprofile-heroimage.jpg");
+.userProfileContainer {
+	height: calc(100vh - 60px);
+
+	.userShortInfoContainer {
+		background-image: $userMockImage;
+		background-size: cover;
+		background-position: top;
+
+		.contentWrapperContainer {
+			display: flex;
+			flex-direction: column;
+			gap: 36px;
+			padding-bottom: 72px;
+
+			.userProfileContent {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 24px;
+				padding: 24px;
+
+				.profileImage {
+					// max-width: 40%;
+					// max-height: 40%;
+					max-width: 120px;
+					max-height: 120px;
+					border-radius: 50%;
+					background-color: lightgray;
+				}
+				.userName {
+					text-align: center;
+					color: $white;
+				}
+			}
+
+			.statisticsContainer {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+
+				.statisticItem {
+					color: $white;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					gap: 12px;
+
+					.StatisticText {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						gap: 4px;
+						font-size: 14px;
+
+						.description {
+						}
+						.value {
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.emptyRecipesContainer {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+
+		.emptyMessage {
+		}
+		.findRecipesBtn {
+			padding: 8px 20px;
+			background-color: $primary;
+			color: $white;
+			font-weight: bold;
+			border-radius: 12px;
+			max-width: fit-content;
+			text-decoration: none;
+		}
+	}
+}
