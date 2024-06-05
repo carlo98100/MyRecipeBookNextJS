@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import ContentWrapper from "../components/ContentWrapper/ContentWrapper";
 import SignInForm from "./components/SignInForm/SignInForm";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
@@ -25,7 +25,13 @@ function page() {
 						<h2 className={styles.orText}>or</h2>
 						<h2 className={`${styles.title} ${!signIn ? styles.active : ""}`}>Sign Up</h2>
 					</div>
-					{signIn ? <SignInForm /> : <SignUpForm toggle={setSignIn} />}
+					{signIn ? (
+						<Suspense>
+							<SignInForm />{" "}
+						</Suspense>
+					) : (
+						<SignUpForm toggle={setSignIn} />
+					)}
 				</div>
 			</ContentWrapper>
 		</div>
