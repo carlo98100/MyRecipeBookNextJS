@@ -4,6 +4,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import Page from "../../src/app/signin/page";
 import Providers from "src/app/components/Providers/Providers";
+// import SignUpForm from "../../src/app/signin/components/SignUpForm/SignUpForm";
 
 jest.mock("next/navigation", () => ({
 	useRouter() {
@@ -53,5 +54,33 @@ describe("Signin", () => {
 		const passwordInput = screen.getByPlaceholderText("**********");
 		fireEvent.change(passwordInput, { target: { value: "password123" } });
 		expect(passwordInput).toHaveValue("password123");
+	});
+
+	it("renders a button with the text Sign In", () => {
+		render(
+			<Providers>
+				<Page />
+			</Providers>
+		);
+
+		const button = screen.getByRole("button", {
+			name: /Sign In/i,
+		});
+
+		expect(button).toBeInTheDocument();
+	});
+
+	it("renders a label button with the text Sign Up", () => {
+		render(
+			<Providers>
+				<Page />
+			</Providers>
+		);
+
+		const heading = screen.getByRole("heading", {
+			name: /Sign Up/i,
+		});
+
+		expect(heading).toBeInTheDocument();
 	});
 });

@@ -27,7 +27,7 @@ function page() {
 					</div>
 					{signIn ? (
 						<Suspense>
-							<SignInForm />{" "}
+							<SignInForm />
 						</Suspense>
 					) : (
 						<SignUpForm toggle={setSignIn} />
