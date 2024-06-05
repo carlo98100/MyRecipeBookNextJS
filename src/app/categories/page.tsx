@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import foodApi from "../api/foodApi";
+import foodApi from "../api/FoodApi";
 import ContentWrapper from "../components/ContentWrapper/ContentWrapper";
 import styles from "./page.module.scss";
 import FoodCard from "../components/FoodCard/FoodCard";

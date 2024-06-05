@@ -1,6 +1,6 @@
 "use client";
 
-import foodApi from "../../../api/foodApi";
+import foodApi from "../../../api/FoodApi";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
