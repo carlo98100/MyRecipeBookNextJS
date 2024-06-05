@@ -1,6 +1,6 @@
 "use client";
 
-import foodApi from "@/app/api/foodApi";
+import foodApi from "../../api/foodApi";
 import { UserContext } from "@/app/contexts/UserContext";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
