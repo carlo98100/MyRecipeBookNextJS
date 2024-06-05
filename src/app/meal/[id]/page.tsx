@@ -1,16 +1,16 @@
 "use client";
 
 import foodApi from "../../api/FoodApi";
-import { UserContext } from "@/app/contexts/UserContext";
+import { UserContext } from "../../contexts/UserContext";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import { useParams, useRouter } from "next/navigation";
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./page.module.scss";
-import ContentWrapper from "@/app/components/ContentWrapper/ContentWrapper";
+import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import { IoMdArrowBack } from "react-icons/io";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-import isAuth from "@/app/isAuth";
+import isAuth from "../../isAuth";
 
 interface Product {
 	idMeal: string;

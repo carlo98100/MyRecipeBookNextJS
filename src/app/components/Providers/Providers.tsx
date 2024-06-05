@@ -1,6 +1,6 @@
 "use client";
 
-import { UserContextProvider } from "@/app/contexts/UserContext";
+import { UserContextProvider } from "../../contexts/UserContext";
 import React, { ReactNode } from "react";
 
 interface ProvidersProps {

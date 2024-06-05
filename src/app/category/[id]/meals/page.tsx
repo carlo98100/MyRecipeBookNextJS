@@ -5,10 +5,10 @@ import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import styles from "./page.module.scss";
-import FoodCard from "@/app/components/FoodCard/FoodCard";
+import FoodCard from "../../../components/FoodCard/FoodCard";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-import ContentWrapper from "@/app/components/ContentWrapper/ContentWrapper";
-import isAuth from "@/app/isAuth";
+import ContentWrapper from "../../../components/ContentWrapper/ContentWrapper";
+import isAuth from "../../../isAuth";
 interface Product {
 	idMeal: string;
 	strMeal: string;
